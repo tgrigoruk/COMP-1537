@@ -1,0 +1,75 @@
+body {
+  background-color: rgb(219, 219, 219);
+}
+
+h1 {
+  border: 15px rgb(167, 167, 167) solid;
+  box-sizing: content-box;
+  background-color: rgb(142, 221, 96);
+  padding: 20px;
+
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+h2 {
+  padding: 12px;
+  background-color: rgb(238, 138, 188);
+  border: 2px black solid;
+  font-size: 18px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  
+}
+
+table {
+  border-collapse: collapse;
+  width: 260px;
+}
+
+.table-main {
+  border: 5px rgb(141, 141, 167) solid;
+  font-size: larger;
+  font-family: monospace;
+  text-align: center;
+  padding: 2px;
+}
+
+.table-head {
+  background-color: rgb(238, 238, 178);
+  border: 1px rgb(199, 199, 211) solid;
+  text-align: right;
+}
+
+.table-cell {
+  background-color: rgb(243, 243, 225);
+  border: 1px rgb(199, 199, 211) solid;
+  text-align: right;
+}
+
+.table-outer{
+    width: 300px;
+    border: 2px gray solid;
+    padding-left: 40px;
+}
+
+#first_block {
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+
+#second_block {
+  width: auto;
+  border: 10px dashed red;
+  padding: 10px;
+  margin: 20px;
+}
+
+#third_block {
+  width: 40%;
+  border: 5px double blue;
+  padding: 20px;
+  margin: 20px;
+}

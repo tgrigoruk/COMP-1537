@@ -1,0 +1,35 @@
+body {
+  background-image: url(./images/cattoo_alpha.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: gray;
+  font-family: monospace;
+  margin: 0px;
+}
+h1 {
+  color: rgb(255, 78, 152);
+  background-color: rgba(70, 70, 70, 0.5);
+  padding: 20px;
+  margin: 0px;
+  position: relative;
+  /* top: -20px; */
+}
+h2 {
+  color: rgb(214, 214, 214);
+}
+ol {
+  font-size: 14px;
+  background-color: rgba(240, 255, 240, 0.699);
+  padding: 30px 60px;
+  width: max-content;
+  margin-top: 20px;
+  box-shadow: 10px 10px 7px rgba(68, 68, 68, 0.5);
+  position: relative;
+}
+.teal_bg {
+  background-color: teal;
+  color: yellow;
+  font-size: larger;
+  font-family: fantasy;
+}
