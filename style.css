@@ -7,7 +7,7 @@ body {
   font-family: monospace;
   margin: 0px;
 }
-h1 {
+#main-title {
   color: rgb(255, 78, 152);
   background-color: rgba(70, 70, 70, 0.5);
   padding: 20px;
@@ -16,16 +16,27 @@ h1 {
   /* top: -20px; */
 }
 h2 {
-  color: rgb(214, 214, 214);
+  color: rgb(241, 217, 234);
 }
-ol {
+#main-list-box {
   font-size: 14px;
-  background-color: rgba(240, 255, 240, 0.699);
-  padding: 30px 60px;
+  background-color: rgba(214, 247, 214, 0.884);
+  padding: 30px 40px;
   width: max-content;
   margin-top: 20px;
   box-shadow: 10px 10px 7px rgba(68, 68, 68, 0.5);
   position: relative;
+}
+.lab-num {
+  font-size: larger;
+  font-weight: bolder;
+}
+td {
+  padding: 10px;
+}
+
+li {
+  padding: 2px 10px;
 }
 .teal_bg {
   background-color: teal;
@@ -33,3 +44,4 @@ ol {
   font-size: larger;
   font-family: fantasy;
 }
+
