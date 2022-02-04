@@ -3,96 +3,124 @@
   text-decoration: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
+#nav, #toc, .info-pic {
+  background-color: #f3f3f3;
+}
 #header {
-  height: 40px;
+  height: 20px;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin: 0;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
+h1 {font-size: 28px;}
+h2 {font-size: 20px;}
 
 hr {
-    margin: 2px 0px;
-    color: #AAA;
+  margin: 2px 0px;
+  color: #EEE;
 }
 
-#navigation {
+#nav {
   width: 15%;
   float: left;
   padding: 15px;
-  background-color: #eee;
-  font-size: smaller;
+  font-size: 13px;
 }
-#navigation img {
+#nav img {
   width: 95%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
-#navigation ul {
+#nav ul {
   list-style: none;
   padding: 0px;
   margin: 10px 0px 20px;
 }
-#navigation li {
-    margin: 0px 0px 5px 0px;
+#nav li {
+  margin: 0px 0px 5px 0px;
 }
 
 #content {
   width: 85%;
   float: left;
   padding: 15px;
+  font-size: 14px;
 }
 .small-text {
-  font-size: 13px;
+  font-size: 11px;
   font-family: sans-serif;
   color: #333;
 }
 #content-header {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
-#content-body {
-}
-#content-text {
-}
-#thumb {
+
+.info-pic {
   float: right;
   width: 220px;
   height: auto;
   padding: 6px;
   margin-left: 10px;
   margin-bottom: 10px;
-  background-color: #eee;
-  border: 2px  #CCC solid;
-}
-
-#thumb h3 {
-  background-color: rgb(169, 206, 169);
-  margin: 0px;
-  padding: 6px;
-  font-size: 16px;
+  border: 2px #ccc solid;
+  font-size: 11px;
+  color: #222;
   text-align: center;
 }
-
-#thumb span {
-    /* box-sizing: content-box; */
-    text-align: center;
-    /* margin-top: 10px; */
+.info-pic h3 {
+  background-color: rgb(169, 206, 169);
+  margin: 0px;
+  padding: 3px;
+  font-size: 13px;
+}
+.info-pic span {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 5px;
 }
 
-#contents-list {
-    float: left;
-    border: 2px solid #999;
-    margin: 10px 15px 10px 0px;
-    padding: 10px;
+#toc {
+  width: 200px;
+  border: 2px solid #999;
+  margin: 10px 0px 20px;
+  padding: 10px;
+  font-size: 13px;
+}
+#toc-header {
+  text-align: center;
+  margin-bottom: 5px;
+}
+#toc ol {
+  counter-reset: item;
+  margin: 0 0 0 5px;
+  padding: 5px;
+}
+#toc ol ol {
+  padding-left: 20px;
+}
+#toc ol li {
+  display: block;
+  padding-top: 5px;
+}
+#toc ol li:before {
+  content: counters(item,".")" ";
+  counter-increment: item;
 }
 
-.section-head {
-    inset-block: ;
+.section {
+  margin-bottom: 30px;
 }
-
-#footer {
-  height: 60px;
+.section h2 {
+  display: inline;
+}
+.section-subtitle {
+  margin: 6px 20px;
+  font-style: italic;
+  font-size: 11px;
+  color: #333;
 }
