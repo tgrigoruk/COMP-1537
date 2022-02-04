@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   background-image: url(./images/cattoo_alpha.png);
   background-repeat: no-repeat;
