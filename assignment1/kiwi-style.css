@@ -7,7 +7,7 @@
   background-color: #f3f3f3;
 }
 #header {
-  height: 20px;
+  height: 40px;
 }
 
 h1,
@@ -123,4 +123,7 @@ hr {
   font-style: italic;
   font-size: 11px;
   color: #333;
+}
+.section-header span{
+  padding-bottom: 10px;
 }
