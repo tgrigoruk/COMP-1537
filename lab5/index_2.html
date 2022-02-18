@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="code.js"></script>
+    <style>
+      * {
+        font-family: Helvetica, sans-serif;
+      }
+      #math-box {
+        margin: 15px;
+        padding: 10px;
+        width: fit-content;
+        border: 2px solid #111;
+        background-color: rgb(214, 235, 241);
+      }
+      #response {
+          height: 30px;
+          background-color: #EEE;
+      }
+      #p1 {
+          padding: 0.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="math-box">
+      <label for="x">Enter a radius: </label>
+      <input type="text" id="x" />
+      <input type="submit" id="calc" />
+      <div id="response">
+        <p id="p1"> </p>
+      </div>
+    </div>
+  </body>
+</html>
