@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  padding: 10px;
+}
+
+header {
+  width: 100%;
+  padding: 20px 15px;
+  margin-bottom: 20px;
+  overflow: auto;
+}
+header::after {
+  clear: both;
+}
+
+nav {
+  display: block;
+  overflow: hidden;
+  border: 1px 0 1px 0 solid #929292;
+  width: 33.33%;
+  float: left;
+  
+}
+
+nav a {
+  /* text-decoration: none; */
+  /* display: block; */
+  float: left;
+  padding: 14px 16px;
+  text-align: center;
+  color: black;
+  /* vertical-align: middle; */
+  display: inline-block;
+  font-family:  'Arial Narrow', Arial, sans-serif;
+  font-weight: 400;
+  font-style: bold;
+  font-size: 18px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  width: 33.33%;
+  vertical-align: center;
+  margin: auto 0;
+}
+
+nav a:hover {
+  background-color: #e4e4e4;
+  color: #333;
+}
+
+#title-heading {
+  /* display: block; */
+  color: #c7423f;
+  width: 33.33%;
+  text-align: center;
+  float: left;
+}
+
+h1,
+h2 {
+
+  font-family: 'Times New Roman', Times, serif;
+}
+
+blockquote {
+  font-family: adobe-garamond-pro;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  letter-spacing: .02em;
+  line-height: 1.5em;
+  text-transform: none;
+}
+
+#main-center {
+  overflow: hidden;
+  width: 95%;
+  margin: 0px auto;
+}
+
+.image-container {
+  float: left;
+  width: 33.3%;
+  padding: 1%;
+}
+
+.image-container img {
+  width: 100%;
+}
+
+#main-quote {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#sub-quote {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-family: d'Arial Narrow', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: .14em;
+  line-height: 1.6em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+footer {
+  clear: both;
+  padding: 30px;
+  background-color: #c7423f;
+  color: white;
+}
+
+#footer-button {
+  padding: 25px 46px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+  font-family: proxima-nova;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #c7423f;
+  background-color: #fff;
+  border-color: #fff;
+  align-content: center;
+  width: max-content;
+  height: max-content;
+  margin: 10px auto 10px;
+}
+
+#footer-button a {
+
+  text-decoration: none;
+  color: #c7423f;
+}
+
+@media screen and (max-width: 700px) {
+  nav {
+    display: none;
+    width: 0 0;
+  }
+
+  .image-container {
+    width: 100%;
+    float: none;
+    /* padding: 10px 0px 10px 0px; */
+  }
+}
