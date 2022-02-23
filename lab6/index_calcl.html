@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="code.js"></script>
+  <style>
+    * {
+      font-family: Helvetica, sans-serif;
+    }
+    h1 {
+      font-style: italic;
+      /* text-align: center; */
+    }
+    #math-box {
+      margin: 15px;
+      padding: 20px;
+      width: fit-content;
+      border: 2px solid #111;
+      background-color: rgb(214, 235, 241);
+    }
+    .operand * {
+      margin: 5px 5px 10px 5px;
+      font-size: 20px;
+    }
+    .operand label {
+      text-align: right;
+    }
+    /* .operand input {
+      display: block;
+      left: 50%;
+    } */
+
+    #response {
+      height: 30px;
+      background-color: #EEE;
+    }
+    #ops input {
+      font-size: 20px;
+      width: 30px;
+    }
+    p {
+      padding: 5px;
+    }
+    .red {
+      color: red;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="math-box">
+    <h1>Calculator!</h1>
+    <div class="operand">
+      <label for="x">First operand: </label>
+      <input type="text" id="x" placeholder="0" />
+    </div>
+    <div  class="operand">
+      <label for="y">Second operand: </label>
+      <input type="text" id="y" placeholder="0" />
+    </div>
+    <div id="ops">
+      <input type="button" class="operator" id="add" value="+" />
+      <input type="button" class="operator" id="sub" value="-" />
+      <input type="button" class="operator" id="mul" value="*" />
+      <input type="button" class="operator" id="div" value="/" />
+    </div>
+    <div id="response">
+      <p id="result"> </p>
+    </div>
+    <h2>History:</h2>
+    <p id="history"> </p>
+</body>
+
+</html>
