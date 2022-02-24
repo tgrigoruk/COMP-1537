@@ -1,7 +1,7 @@
 * {
   font-family: monospace;
   box-sizing: border-box;
-  /* margin: 0; */
+  margin: 0;
 }
 
 #math-box {
@@ -16,16 +16,15 @@
 h1,
 h2 {
   /* font-style: italic; */
-  padding: 0.5em;
-  margin: 0;
+  padding: 5px;
 }
 #calc-title {
-  background-color: rgba(255, 255, 255, 0.712);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 0.5em;
   text-align: center;
 }
 .operand {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 .operand label {
   display: inline-block;
@@ -36,6 +35,7 @@ h2 {
 .operand input {
   font-size: 18px;
   width: 3em;
+  text-align: center;
 }
 
 #op-buttons {
@@ -52,30 +52,38 @@ button.operator {
 }
 
 #result-box {
-margin: 20px 0 20px;
+  margin: 20px 0 20px;
   padding: 0.5em;
-  height: fit-content;
+  height: 54px;
   font-size: 16px;
   background-color: white;
   box-shadow: inset 3px 2px 3px rgb(138, 138, 138);
   border-radius: 5px;
 }
 #result {
-  margin: 0;
   height: fit-content;
 }
-#history-box {
-  background-color: rgb(242, 242, 243);
-  border-radius: 10px;
-}
 
+#history-box {
+  height: fit-content;
+  background-color: rgb(245, 245, 245);
+  border: 2px solid rgb(245, 245, 245);
+  border-radius: 10px;
+  overflow: hidden;
+}
+#history-box hr {
+  color: rgb(150, 150, 150);
+}
 #history {
-  margin: 0;
+  height: 250px;
+  overflow: auto;
 }
 #history * {
-  /* padding: 5px; */
-  padding: 5px;
+  padding: 4.5px;
+  font-size: 13px;
+  /* margin-top: 1px; */
 }
+
 .add-color {
   background-color: rgb(255, 255, 200);
 }

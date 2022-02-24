@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 body {
   background-image: url(./images/cattoo_alpha.png);
@@ -8,19 +9,31 @@ body {
   background-size: cover;
   background-color: gray;
   font-family: monospace;
-  margin: 0px;
 }
-#main-title {
+header {
   color: rgb(255, 78, 152);
   background-color: rgba(70, 70, 70, 0.5);
-  padding: 20px;
+  padding: 20px 30px;
   margin: 0px;
-  position: relative;
-  /* top: -20px; */
 }
+
 h2 {
   color: rgb(241, 217, 234);
 }
+section {
+  font-size: 14px;
+  background-color: rgba(214, 247, 214, 0.884);
+  padding: 30px;
+  margin-top: 20px;
+  box-shadow: 10px 10px 7px rgba(68, 68, 68, 0.5);
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+section h3 {
+  font-size: larger;
+  font-weight: bolder;
+}
+
 #main-list-box {
   font-size: 14px;
   background-color: rgba(214, 247, 214, 0.884);
