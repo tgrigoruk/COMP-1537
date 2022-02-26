@@ -1,9 +1,9 @@
-
 let history = []
+
 function operate(op) {
     x = parseInt($('#x').val());
     y = parseInt($('#y').val());
-    switch(op) {
+    switch (op) {
         case 'add':
             expression = x + ' + ' + y + ' = ' + (x + y);
             break;
@@ -26,13 +26,33 @@ function operate(op) {
             expression = 'ERROR'
             console.log("Error in calculation")
     }
-    jQuery('#result').html("Result of " + expression);
+    $('#result').html("Result of " + expression);
     history.unshift(`<div class=${op}-color>${expression}</div>`);
     $('#history').html(history);
 }
 
+function font(change) {
+    let font_size = parseInt($('#history').css('font-size'));
+    switch (change) {
+        case 'inc':
+            $('#history').css('font-size', font_size + 1);
+            break;
+        case 'dec':
+            $('#history').css('font-size', font_size - 1);
+            break;
+        case 'fam':
+            $('#history').css('font-size', font_size + 1);
+            break;
+    }
+}
+
 function setup() {
-    $(".operator").click(function(){operate(this.id)} )
+    $(".operator").click(function () {
+        operate(this.id)
+    })
+    $(".font").click(function () {
+        font(this.id)
+    })
 }
 
 $(document).ready(setup);

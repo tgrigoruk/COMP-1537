@@ -8,10 +8,10 @@
   margin: 15px;
   padding: 20px;
   width: 300px;
-  border: 2px solid #111;
+  border: 3px solid rgb(88, 88, 88);
   border-radius: 25px;
   background-color: rgb(204, 204, 204);
-  box-shadow: 12px 6px 8px rgb(138, 138, 138);
+  box-shadow: 12px 6px 9px rgb(167, 167, 167);
 }
 h1,
 h2 {
@@ -50,6 +50,12 @@ button.operator {
   height: 36px;
   border-radius: 8px;
 }
+#font-settings {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
 #result-box {
   margin: 20px 0 20px;
@@ -67,17 +73,17 @@ button.operator {
 #history-box {
   height: fit-content;
   background-color: rgb(245, 245, 245);
-  border: 2px solid rgb(245, 245, 245);
+  border: 3px solid rgb(245, 245, 245);
   border-radius: 10px;
   overflow: hidden;
 }
 #history {
+  font-size: 13px;
   height: 250px;
   overflow: auto;
 }
 #history * {
   padding: 4.5px;
-  font-size: 13px;
   /* margin-top: 1px; */
 }
 
