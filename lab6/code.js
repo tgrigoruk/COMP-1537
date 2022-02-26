@@ -31,7 +31,7 @@ function operate(op) {
     $('#history').html(history);
 }
 
-function font(change) {
+function font_change(change) {
     let font_size = parseInt($('#history').css('font-size'));
     switch (change) {
         case 'inc':
@@ -39,9 +39,6 @@ function font(change) {
             break;
         case 'dec':
             $('#history').css('font-size', font_size - 1);
-            break;
-        case 'fam':
-            $('#history').css('font-size', font_size + 1);
             break;
     }
 }
@@ -51,8 +48,13 @@ function setup() {
         operate(this.id)
     })
     $(".font").click(function () {
-        font(this.id)
+        font_change(this.id)
     })
+    $("#calc-title").hover(function(){
+        $(this).css("font-style", "italic");
+        }, function(){
+        $(this).css("font-style", "normal");
+      });
 }
 
 $(document).ready(setup);
