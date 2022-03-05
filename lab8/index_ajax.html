@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="code.js"></script>
+    <title>Weather App</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: rgb(209, 225, 240);
+        }
+
+        #content-main {
+            width: max-content;
+            padding: 15px;
+            background-color: rgb(247, 247, 226);
+            border: 3px solid white;
+            border-radius: 10px;
+        }
+        span {
+            font-weight: bold;
+        }
+
+        #w_img_box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(115, 122, 146);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content-main">
+        <div>Enter a city name: <input type="" id="city-name" type="text">
+            <button id="get_weather">
+                Click me!
+            </button></div>
+        <div>
+            <p>Temperature is: <span id="temp"></span></p>
+            <p>Weather is: <span id="weather"></span>
+        </div>
+        <div id="w_img_box">
+            <img id="w_img" src="" alt=""></p>
+        </div>
+    </div>
+</body>
+
+</html>

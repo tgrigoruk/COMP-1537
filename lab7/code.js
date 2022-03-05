@@ -27,7 +27,7 @@ function operate(op) {
     $('#result').html("Result of " + expression);
     expression_div = `<div class=${op}-color>
         <span class="expresssion">${expression}</span>
-        <input type="submit" class="hide-button" value="Hide this">
+        <input type="submit" class="clear-button" value="clear">
         </div>`;
     $('#history').prepend(expression_div);
 }
@@ -54,10 +54,12 @@ function setup() {
     })
     $("#calc-title").hover(function(){
         $(this).css("font-style", "italic");
+        $(this).css("background-color", "rgba(255, 100, 100, 0.7)");
         }, function(){
         $(this).css("font-style", "normal");
+        $(this).css("background-color", "rgba(255, 255, 255, 0.7)");
       });
-    $('body').on("click", ".hide-button", function() {
+    $('body').on("click", ".clear-button", function() {
         $(this).parent().remove();
     });
 }

@@ -21,10 +21,12 @@ h2 {
   color: rgb(241, 217, 234);
 }
 section {
+  width: max-content;
   font-size: 14px;
   background-color: rgba(214, 247, 214, 0.884);
   padding: 30px;
   margin-top: 20px;
+  border-radius: 1em;
   box-shadow: 10px 10px 7px rgba(68, 68, 68, 0.5);
   display: grid;
   grid-template-columns: 1fr 4fr;
