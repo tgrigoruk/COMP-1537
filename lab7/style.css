@@ -81,13 +81,12 @@ button.operator {
   height: 250px;
   overflow: auto;
 }
-#history * {
-  padding: 4.5px;
-  /* margin-top: 1px; */
+#history>* {
+  padding: 4px;
 }
-.hide-button {
-  /* display: none; */
-  margin-left: 15px;
+.clear-button {
+  display: block;
+  float: right;
 }
 
 .add-color {
