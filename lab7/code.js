@@ -45,21 +45,21 @@ function font_change(change) {
 }
 
 function setup() {
-    
     $(".operator").click(function () {
         operate(this.id)
     })
     $(".font").click(function () {
         font_change(this.id)
     })
-    $("#calc-title").hover(function(){
+    $("#calc-title").hover(function () {
         $(this).css("font-style", "italic");
-        $(this).css("background-color", "rgba(255, 100, 100, 0.7)");
-        }, function(){
+        $(this).css("background-color", "rgba(255, 0, 0, 0.5)");
+        $(this).blink();
+    }, function () {
         $(this).css("font-style", "normal");
         $(this).css("background-color", "rgba(255, 255, 255, 0.7)");
-      });
-    $('body').on("click", ".clear-button", function() {
+    });
+    $('body').on("click", ".clear-button", function () {
         $(this).parent().remove();
     });
 }

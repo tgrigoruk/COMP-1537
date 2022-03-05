@@ -3,15 +3,25 @@
   margin: 0;
   font-family: monospace;
 }
-
+body {
+  background-image: url(./calc_bg.avif);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: gray;
+  font-family: monospace;
+}
 #math-box {
-  margin: 15px;
+  /* margin: 15px; */
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
   width: 300px;
   border: 3px solid rgb(88, 88, 88);
   border-radius: 25px;
-  background-color: rgb(204, 204, 204);
-  box-shadow: 12px 6px 9px rgb(167, 167, 167);
+  background-color: rgb(194, 207, 241);
+  box-shadow: 20px 10px 12px rgb(82, 82, 82);
 }
 h1,
 h2 {
@@ -81,11 +91,11 @@ button.operator {
   height: 250px;
   overflow: auto;
 }
-#history>* {
-  padding: 4px;
+#history div {
+  padding: 0.66em;
 }
 .clear-button {
-  display: block;
+  font-size: x-small;
   float: right;
 }
 
