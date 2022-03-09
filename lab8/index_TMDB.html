@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Movie Search!</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="TMDB.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="#" />
+  </head>
+
+  <body>
+    <article>
+      <div id="content-main">
+        <div id="search-bar">
+          <h1>Internet Movie DataBase Search</h1>
+          Enter a movie title:
+          <input type="" id="movie-title" type="text" />
+          <button id="get_movie">Click me!</button>
+        </div>
+        <div id="movies-container">
+          <br />
+          <div id="movies-go-here">
+            <template id="movieCardTemplate">
+              <div class="movie-card">
+                <div class="clear-fix">
+                  <div class="poster-container">
+                    <img class="poster" src="" alt="" />
+                  </div>
+                  <div class="movie-text-container">
+                    <p>Title: <span class="title"></span><p>
+                    <p class="desc">Description:</p>
+                    <p class="overview"></p>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>
