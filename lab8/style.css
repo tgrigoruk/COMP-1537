@@ -1,42 +1,94 @@
+:root {
+  --bg-light: white;
+  --bg-gray: rgb(111, 119, 129);
+  --bg-blue: rgb(101, 215, 243);
+  --bg-yellow: rgb(243, 243, 240);
+}
+
 * {
   font-family: sans-serif;
   box-sizing: border-box;
 }
-
+html,
 body {
-  background-color: rgb(111, 119, 129);
+  height: 100%;
+  margin: 0;
 }
+body {
+  background-color: var(--bg-gray);
+  /* background-image: none;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: monospace; */
+}
+
 p {
   margin: 5px;
 }
-
-#search-bar {
-  width: fit-content;
-  margin: 20px;
-  padding: 10px;
-  background-color: rgb(186, 232, 243);
-  border: 3px solid white;
-  border-radius: 6px;
+#content-main {
+  height: 100%;
 }
 
+#head-container {
+  height: 23%;
+  margin: 20px;
+  /* padding: 10px; */
+  background-color: var(--bg-blue);
+  border: 5px solid var(--bg-blue);
+  border-radius: 10px;
+  min-width: 720px;
+  overflow: hidden;
+  position: relative;
+}
+#search-container {
+  margin: 15px;
+  padding: 10px;
+  width: 360px;
+  background-color: var(--bg-blue);
+  border-radius: 6px;
+  /* float: left; */
+  position: absolute;
+  z-index: 5;
+}
+h1 {
+  font-size: 25px;
+}
+
+#bd-image {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+#movies-container {
+  height: 70%;
+  overflow: scroll;
+  background-color: var(--bg-blue);
+  min-width: 720px;
+  border: 5px solid var(--bg-blue);
+  border-radius: 10px;
+  /* padding: 10px; */
+  margin: 20px;
+}
 .movie-card {
   margin: 20px;
   padding: 10px;
-  background-color: rgb(236, 236, 227);
-  border: 3px solid white;
+  background-color: var(--bg-yellow);
+  border: 3px solid var(--bg-light);
   border-radius: 8px;
 }
 .title {
-    font-weight: bolder;
+  font-weight: bolder;
 }
-.desc {
-    text-decoration: underline;
-}
+/* .desc {
+  text-decoration: underline;
+} */
 .poster {
   width: 100%;
 }
 .poster-container {
-  width: 25%;
+  width: 20%;
   /* height: auto; */
   border-radius: 6px;
   overflow: hidden;
@@ -45,7 +97,7 @@ p {
 
 .movie-text-container {
   padding-left: 15px;
-  width: 75%;
+  width: 80%;
   display: block;
   float: left;
 }
