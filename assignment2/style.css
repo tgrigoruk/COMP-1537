@@ -2,7 +2,9 @@
   --bg-light: white;
   --bg-gray: rgb(111, 119, 129);
   --bg-blue: rgb(101, 215, 243);
+  --bg-blue-alpha: rgba(101, 215, 243, 0.75);
   --bg-yellow: rgb(243, 243, 240);
+  --min-width: 400px;
 }
 
 * {
@@ -13,9 +15,8 @@ html,
 body {
   height: 100%;
   margin: 0;
-
-  padd
 }
+
 body {
   background-color: var(--bg-gray);
   /* background-image: none;
@@ -40,7 +41,7 @@ p {
   background-color: var(--bg-blue);
   border: 5px solid var(--bg-blue);
   border-radius: 10px;
-  min-width: 720px;
+  min-width: var(--min-width);
   overflow: hidden;
   position: relative;
 }
@@ -49,20 +50,23 @@ p {
   padding: 10px;
   width: fit-content;
   height: 160px;
-  background-color: var(--bg-blue);
+  background-color: var(--bg-blue-alpha);
   border-radius: 6px;
   /* float: left; */
   position: absolute;
   z-index: 5;
 }
 #page-buttons-container {
-  padding: 10px;
+  padding: 5px;
+  margin: 0;
 }
 #page-button {
   /* font-size: 30px; */
+  display: inline;
 }
 #display-page-num{
   text-align: center;
+  margin: 0;
 }
 #numbered-buttons {
   display: inline-block;
@@ -71,20 +75,23 @@ h1 {
   font-size: 25px;
 }
 
-#bd-image {
-  width: 100%;
-  height: 240px;
+#bd-image-container {
+  height: 100%;
   position: absolute;
   z-index: 1;
   border-radius: 8px;
   overflow: hidden;
 }
+#bd-image {
+  width: 100%;
+}
+
 
 #movies-container {
   height: 70%;
   overflow: scroll;
   background-color: var(--bg-blue);
-  min-width: 720px;
+  min-width: var(--min-width);
   border: 5px solid var(--bg-blue);
   border-radius: 10px;
   /* padding: 10px; */
