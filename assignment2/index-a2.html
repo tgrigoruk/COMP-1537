@@ -6,7 +6,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="code-a2.js"></script>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style-a2.css" />
     <link rel="shortcut icon" href="#" />
   </head>
 
@@ -19,22 +19,22 @@
           <input type="" id="movie-title" type="text" />
           <button id="get-movie">Search</button>
           <div id="page-buttons-container">
-            <button class="page-button text" id="first">first</button>
-            <button class="page-button text" id="prev">"&lt&lt"</button>
-            <div id="numbered-buttons">
-              <!-- <button class="page-button num" id="p1">1</button>
-              <button class="page-button num" id="p2">2</button>
-              <button class="page-button num" id="p3">3</button>
-              <button class="page-button num" id="p4">4</button>
-              <button class="page-button num" id="p5">5</button> -->
+            <div id="first-prev-container">
+              <button class="page-button text" id="first">first</button>
+              <button class="page-button text" id="prev">&lt&lt</button>
             </div>
-            <button class="page-button text" id="next">&gt&gt</button>
-            <button class="page-button text" id="last">last</button>
-            <select name="page-size" id="page-size">
-              <option value="3">3</option>
-              <option value="6">6</option>
-              <option value="12">12</option>
-             </select>
+            <div id="numbered-buttons"></div>
+            <div id="next-last-container">
+              <button class="page-button text" id="next">&gt&gt</button>
+              <button class="page-button text" id="last">last</button>
+            </div>
+            <div id="page-size-container">
+              <select name="page-size" id="page-size">
+                <option value="3">3</option>
+                <option value="6">6</option>
+                <option value="12">12</option>
+              </select>
+            </div>
           </div>
           <p id="display-page-num"></p>
         </div>

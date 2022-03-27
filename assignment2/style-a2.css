@@ -4,7 +4,7 @@
   --bg-blue: rgb(101, 215, 243);
   --bg-blue-alpha: rgba(101, 215, 243, 0.75);
   --bg-yellow: rgb(243, 243, 240);
-  --min-width: 400px;
+  --min-width: 420px;
 }
 
 * {
@@ -31,11 +31,12 @@ p {
 }
 #content-main {
   height: 100%;
+  margin: 0;
   /* padding: 5px; */
 }
 
 #head-container {
-  height: 240px;
+  height: 215px;
   margin: 20px;
   /* padding: 10px; */
   background-color: var(--bg-blue);
@@ -48,7 +49,7 @@ p {
 #search-container {
   margin: 20px;
   padding: 10px;
-  width: fit-content;
+  width: 420px;
   height: 160px;
   background-color: var(--bg-blue-alpha);
   border-radius: 6px;
@@ -57,20 +58,36 @@ p {
   z-index: 5;
 }
 #page-buttons-container {
+  width: 100%;
   padding: 5px;
   margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  /* position: relative; */
 }
-#page-button {
+#first-prev-container {
+  margin-left: auto;
+  margin-right: 0;
+}
+#numbered-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+#next-last-container {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.page-button {
   /* font-size: 30px; */
-  display: inline;
+  /* display: block; */
+  margin: 0;
 }
 #display-page-num{
   text-align: center;
   margin: 0;
 }
-#numbered-buttons {
-  display: inline-block;
-}
+
 h1 {
   font-size: 25px;
 }
@@ -90,6 +107,7 @@ h1 {
 #movies-container {
   height: 70%;
   overflow: scroll;
+  scrollbar-color: var(--bg-blue);
   background-color: var(--bg-blue);
   min-width: var(--min-width);
   border: 5px solid var(--bg-blue);
@@ -97,8 +115,11 @@ h1 {
   /* padding: 10px; */
   margin: 20px;
 }
+#movies-go-here {
+  background-color: var(--bg-blue);
+}
 .movie-card {
-  margin: 20px;
+  margin: 15px;
   padding: 10px;
   background-color: var(--bg-yellow);
   border: 3px solid var(--bg-light);
@@ -114,7 +135,7 @@ h1 {
   width: 100%;
 }
 .poster-container {
-  width: 20%;
+  width: 15%;
   /* height: auto; */
   border-radius: 6px;
   overflow: hidden;

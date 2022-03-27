@@ -4,35 +4,42 @@ var currPage = 1;
 var pageSize = 3;
 var numberOfPageButtons = 5;
 
+
+function getMovieData() {
+  currPage = 1;
+  displayPageNum(currPage);
+  movie = $("#movie-title").val();
+  $.ajax({
+    url: `https://api.themoviedb.org/3/search/movie?api_key=bab41f87cd616dd4eb77708d7f29e2dc&query=${movie}`,
+    type: "GET",
+    success: (data) => {
+      $("#movies-go-here").empty();
+      movies = data.results;
+      currentNumberOfPages = Math.ceil(movies.length / pageSize);
+      if (currentNumberOfPages) {
+        currPage = 1;
+        updatePageButtons(currPage);
+        $("#page-buttons-container").show();
+        displayMovies(currPage);
+      } else {
+        $("#page-buttons-container").hide();
+        $("#display-page-num").text("No movies found!");
+      }
+    },
+  });
+}
+
 function displayMovies(page) {
   // console.log(movies);
-  // $("#movies-go-here").empty();
-  console.log(currentNumberOfPages);
-
-  firstMovieInPageIndex = (currPage - 1) * pageSize;
+  $("#movies-go-here").empty();
+  firstMovieInPageIndex = (page - 1) * pageSize;
   lasttMovieInPageIndex = Math.min(firstMovieInPageIndex + pageSize);
   for (let i = firstMovieInPageIndex; i < lasttMovieInPageIndex; i++) {
     createCardFromTemplate(movies, i);
   }
 }
 
-function updatePageButtons(page) {
-  $("#numbered-buttons").empty();
-  let lowestPage = Math.max(1, currPage - Math.ceil(numberOfPageButtons / 2));
-
-  for (let i = lowestPage; i < numberOfPageButtons + 1; i++) {
-    $("#numbered-buttons").append(
-      `<button class="page-button">${i}</button>`
-    );
-  }
-}
-
 function createCardFromTemplate(movies, index) {
-  // to do this without using <template>...
-  // $('#results').append(title + '<br');
-  // $('#results').append(`<p>${overview}</p>`);
-  // $('#results').append(`<img src=${poster}><br>`);
-
   let cardTemplate = document.querySelector("#movieCardTemplate");
   let newcard = cardTemplate.content.cloneNode(true);
   newcard.querySelector(".title").innerHTML = movies[index].original_title;
@@ -53,38 +60,34 @@ function createCardFromTemplate(movies, index) {
   });
 }
 
-function getMovieData() {
-  currPage = 1;
-  displayPageNum(currPage);
-  movie = $("#movie-title").val();
-  $.ajax({
-    url: `https://api.themoviedb.org/3/search/movie?api_key=bab41f87cd616dd4eb77708d7f29e2dc&query=${movie}`,
-    type: "GET",
-    success: (data) => {
-      $("#movies-go-here").empty();
-      movies = data.results;
-      currentNumberOfPages = Math.ceil(movies.length / pageSize);
-      if (currentNumberOfPages) {
-        currPage = 1;
-        updatePageButtons(currPage);
-        $("#page-buttons-container").show();
-        displayMovies();
-      } else {
-        $("#page-buttons-container").hide();
-        $("#display-page-num").text("No movies found!");
-      }
-    },
-  });
+function displayPageNum(num) {
+  $("#display-page-num").text("Page " + num);
 }
 
+function updatePageButtons(page) {
+  $("#numbered-buttons").empty();
+  let minPage = Math.max(1, page - Math.floor(numberOfPageButtons / 2));
+  maxPage = currentNumberOfPages - numberOfPageButtons;
+  minPage = Math.min(minPage, maxPage);
+  minPage > 1 ? $("#first, #prev").show() : $("#first, #prev").hide();
+  minPage + numberOfPageButtons == currentNumberOfPages ? $("#last, #next").hide() : $("#last, #next").show();
+
+  for (let i = minPage; i < minPage + numberOfPageButtons; i++) {
+    $("#numbered-buttons").append(
+      `<button class="page-button">${i}</button>`
+    );
+  }
+  $(".page-button").click(changePage);
+}
+
+
 function changePage() {
-  page = this.innerHTML; //id.replace("page-", "");
-  console.log(page);
+  let chosenPage = this.innerHTML;
   let prevPage = currPage;
-  if (!isNaN(page)) {
-    currPage = parseInt(page);
+  if (!isNaN(chosenPage)) {
+    currPage = parseInt(chosenPage);
   } else {
-    switch (page) {
+    switch (chosenPage) {
       case "&gt;&gt;":
         console.log("next");
         currPage++;
@@ -96,31 +99,32 @@ function changePage() {
         currPage = 1;
         break;
       case "last":
-        currPage = currentNumberOfPages[-1];
+        currPage = currentNumberOfPages - 1;
         break;
     }
   }
   currPage = Math.max(1, currPage);
-  currPage = Math.min(currPage, currentNumberOfPages[-1]);
+  currPage = Math.min(currPage, currentNumberOfPages - 1);
   if (currPage != prevPage) {
     updatePageButtons(currPage);
     displayPageNum(currPage);
-    displayMovies();
+    displayMovies(currPage);
   }
 }
 
-function displayPageNum(num) {
-  $("#display-page-num").text("Page " + num);
-}
+
 function pageSizeSelected() {
   pageSize = parseInt(this.value);
   currentNumberOfPages = Math.ceil(movies.length / pageSize);
-  console.log(pageSize, currentNumberOfPages);
+  // console.log(pageSize, currentNumberOfPages);
   // find movie index, ensure on right page to display first movie on page
-  updatePageButtons();
+
+  updatePageButtons();// BROKEN!
+  
   // displayMovies(???);
 }
 function setup() {
+  $("#numbered-buttons").css("grid-template-columns", `repeat(${numberOfPageButtons}, 1fr)`);
   $("#get-movie").click(getMovieData);
   $(".page-button").click(changePage);
   $("#page-buttons-container").hide();
