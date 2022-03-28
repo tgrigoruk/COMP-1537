@@ -4,7 +4,7 @@
   --bg-blue: rgb(101, 215, 243);
   --bg-blue-alpha: rgba(101, 215, 243, 0.75);
   --bg-yellow: rgb(243, 243, 240);
-  --min-width: 420px;
+  --min-width: 440px;
 }
 
 * {
@@ -33,23 +33,23 @@ p {
   height: 100%;
   margin: 0;
   /* padding: 5px; */
+  display: grid;
+  grid-template-rows: 280px 1fr;
 }
 
 #head-container {
-  height: 215px;
-  margin: 20px;
-  /* padding: 10px; */
+  /* height: 215px; */
+  margin: 10px;
   background-color: var(--bg-blue);
-  border: 5px solid var(--bg-blue);
+  border: 3px solid var(--bg-blue);
   border-radius: 10px;
   min-width: var(--min-width);
-  overflow: hidden;
   position: relative;
 }
 #search-container {
-  margin: 20px;
-  padding: 10px;
-  width: 420px;
+  margin: 15px;
+  padding: 15px;
+  width: 400px;
   height: 160px;
   background-color: var(--bg-blue-alpha);
   border-radius: 6px;
@@ -57,6 +57,14 @@ p {
   position: absolute;
   z-index: 5;
 }
+#movie-title {
+  width: 155px;
+}
+#page-size {
+  margin-left: 5px;
+  width: 50px;
+}
+
 #page-buttons-container {
   width: 100%;
   padding: 5px;
@@ -65,16 +73,17 @@ p {
   grid-template-columns: 1fr 2fr 1fr 1fr;
   /* position: relative; */
 }
+
 #first-prev-container {
   margin-left: auto;
-  margin-right: 0;
+  margin-right: 5px;
 }
 #numbered-buttons {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
 #next-last-container {
-  margin-left: 0;
+  margin-left: 5px;
   margin-right: auto;
 }
 
@@ -82,10 +91,14 @@ p {
   /* font-size: 30px; */
   /* display: block; */
   margin: 0;
+  border-radius: 0;
 }
-#display-page-num{
+#no-movies-found {
+  color: rgb(157, 11, 11);
   text-align: center;
-  margin: 0;
+  font-style: italic;
+  font-weight: bolder;
+  margin: 5px;
 }
 
 h1 {
@@ -103,23 +116,19 @@ h1 {
   width: 100%;
 }
 
-
 #movies-container {
-  height: 70%;
-  overflow: scroll;
-  scrollbar-color: var(--bg-blue);
+  margin: 10px;
   background-color: var(--bg-blue);
   min-width: var(--min-width);
   border: 5px solid var(--bg-blue);
   border-radius: 10px;
-  /* padding: 10px; */
-  margin: 20px;
+  overflow: auto;
+  scrollbar-color: gray rgba(0,0,0,0);
+  /* scrollbar-color: var(--bg-blue); */
 }
-#movies-go-here {
-  background-color: var(--bg-blue);
-}
+
 .movie-card {
-  margin: 15px;
+  margin: 10px;
   padding: 10px;
   background-color: var(--bg-yellow);
   border: 3px solid var(--bg-light);
