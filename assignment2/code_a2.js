@@ -42,6 +42,7 @@ function displayMovies(page) {
 function createCardFromTemplate(movies, index) {
   let cardTemplate = document.querySelector("#movieCardTemplate");
   let newcard = cardTemplate.content.cloneNode(true);
+  newcard.querySelector(".movie-number").innerHTML = index + 1;
   newcard.querySelector(".title").innerHTML = movies[index].original_title;
   newcard.querySelector(".overview").innerHTML = movies[index].overview;
   if (movies[index].poster_path) {

@@ -140,6 +140,9 @@ h1 {
   border: 3px solid var(--bg-light);
   border-radius: 8px;
 }
+.movie-number-heading {
+  text-decoration: underline;
+}
 .title {
   font-weight: bolder;
 }
