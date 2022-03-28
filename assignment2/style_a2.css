@@ -48,7 +48,7 @@ p {
 }
 #search-container {
   margin: 15px;
-  padding: 15px;
+  padding: 12px;
   width: 400px;
   height: 160px;
   background-color: var(--bg-blue-alpha);
@@ -73,26 +73,30 @@ p {
   grid-template-columns: 1fr 2fr 1fr 1fr;
   /* position: relative; */
 }
+.page-button {
+  margin: 0;
+  border-radius: 0;
+  font-weight: bolder;
+}
+
+#page-buttons-container  * {
+  height: 22px;
+}
 
 #first-prev-container {
   margin-left: auto;
-  margin-right: 5px;
+  margin-right: 3px;
 }
 #numbered-buttons {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
 #next-last-container {
-  margin-left: 5px;
+  margin-left: 3px;
   margin-right: auto;
 }
 
-.page-button {
-  /* font-size: 30px; */
-  /* display: block; */
-  margin: 0;
-  border-radius: 0;
-}
+
 #no-movies-found {
   color: rgb(157, 11, 11);
   text-align: center;
@@ -107,10 +111,12 @@ h1 {
 
 #bd-image-container {
   height: 100%;
+  width: 100%;
   position: absolute;
   z-index: 1;
   border-radius: 8px;
   overflow: hidden;
+  
 }
 #bd-image {
   width: 100%;

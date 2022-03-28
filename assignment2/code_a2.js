@@ -73,7 +73,8 @@ function updatePageButtons(page) {
   minPage = Math.min(minPage, currentNumberOfPages - numberOfPageButtons + 1);
   minPage = Math.max(1, minPage);
   minPage > 1 ? $("#first").show() : $("#first").hide();
-  minPage > currentNumberOfPages - numberOfPageButtons ? $("#last").hide() : $("#last").show();
+  // minPage > currentNumberOfPages - numberOfPageButtons ? $("#last").hide() : $("#last").show();
+  currPage == currentNumberOfPages ? $("#last").hide() : $("#last").show();
   currPage == 1 ? $("#prev").hide() : $("#prev").show();
   currPage == currentNumberOfPages ? $("#next").hide() : $("#next").show();
   actualNumberOfPageButtons = Math.min(numberOfPageButtons, currentNumberOfPages);
