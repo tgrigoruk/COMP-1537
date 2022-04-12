@@ -33,3 +33,15 @@ h1, h2 {
 #result * {
     font-family: Courier, monospace;
 }
+
+table, th, td {
+    border-collapse: collapse;
+
+    border: 1px solid rgb(194, 194, 194);
+}
+th {
+    background-color: lightblue;
+}
+th, td {
+    padding: 2px 5px;
+}

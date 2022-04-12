@@ -1,6 +1,8 @@
-var heroku = "https://calm-ocean-32732.herokuapp.com";
+var myURL = "https://calm-ocean-32732.herokuapp.com";
+// myURL = "https://localhost:5001"
 
 let unicornData = null;
+
 function process_res(data) {
   unicornData = data;
   if (unicornData !== null) {
@@ -15,7 +17,7 @@ function findUnicornByName() {
   console.log($("#unicornName").val());
 
   $.ajax({
-    url: heroku + "/findUnicornByName",
+    url: myURL + "/findUnicornByName",
     type: "POST",
     data: {
       unicornName: $("#unicornName").val(),
@@ -33,7 +35,7 @@ function findUnicornByFood() {
   if ($("#apple").is(":checked")) appleIsChecked = "checked";
 
   $.ajax({
-    url: heroku + "/findUnicornByFood",
+    url: myURL + "/findUnicornByFood",
     type: "POST",
     data: {
       carrotIsChecked: carrotIsChecked,
@@ -49,7 +51,7 @@ function findUnicornByWeight() {
   console.log(lowerWeight + " " + higherWeight);
 
   $.ajax({
-    url: heroku + "/findUnicornByWeight",
+    url: myURL + "/findUnicornByWeight",
     type: "POST",
     data: {
       lowerWeight: lowerWeight,
@@ -63,7 +65,7 @@ function findUnicornByWeight() {
 //   unicornNameFilter = $("#unicornNameFilter").is(":checked") ? 1 : 0;
 //   unicornWieghtFilter = $("#unicornWieghtFilter").is(":checked") ? 1 : 0;
 //   $.ajax({
-//     url: heroku + "/filter",
+//     url: myURL + "/filter",
 //     type: "POST",
 //     data: {
 //       unicornFilter: {name: unicornNameFilter, weight: unicornWieghtFilter}
@@ -81,7 +83,8 @@ function filterUnicorn() {
   unicornWieghtFilter = $("#unicornWieghtFilter").is(":checked") ? 1 : 0;
   let uList = [];
   if (!(unicornNameFilter || unicornWieghtFilter)) {
-    uList = "<pre>" + JSON.stringify(unicornData, null, 2) + "</pre>";
+    // uList = "<pre>" + JSON.stringify(unicornData, null, 2) + "</pre>";
+    displayResults(unicornData);
   } else {
     unicornData.forEach((unicorn) => {
       let unicornDisplay = [];
@@ -89,8 +92,47 @@ function filterUnicorn() {
       if (unicornWieghtFilter) unicornDisplay.push(unicorn.weight);
       uList.push(`<p>${unicornDisplay.join(", ")}</p>`);
     });
+    $("#result").html(uList);
   }
-  $("#result").html(uList);
+}
+
+function displayResults(unicorns) {
+  $("#result").html(
+    `<table>
+      <thead>
+        <tr id="uheader">
+          <th>ID</th>
+          <th>Name</th>
+          <th>DOB</th>
+          <th>Loves</th>
+          <th>Weight</th>
+          <th>Gender</th>
+          <th>Vampires</th>
+        </tr>
+      </thead>
+      <tbody id="utable"></tbody>
+    </table>
+          `
+  );
+  fields = ['_id', 'name', 'dob', 'loves', 'weight', 'gender', 'vampires']
+  unicornData.forEach((unicorn) => {
+    urow = "";
+    fields.forEach((field) => {
+      // console.log(field +" is "+value)
+      if (field == "loves") {
+        urow += "<td><ul>";
+        unicorn[field].forEach((love) => {
+          urow += `<li>${love}</li>`;
+        });
+        urow += "</ul></td>";
+      } else if (unicorn[field] === undefined) {
+        urow += `<td>N/A</td>`;
+      } else {
+        urow += `<td>${unicorn[field]}</td>`;
+      }
+    });
+    $("#utable").append(`<tr>${urow}</tr>`);
+  });
 }
 
 function setup() {
