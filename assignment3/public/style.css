@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    font-family: "Lemon", sans-serif;
+}
+
+body {
+    background-color: rgb(179, 213, 244);
+    padding: 5px;
+}
+h1 {
+    color: blueviolet;
+}
+h1, h2 {
+    margin: 5px;
+}
+.section{
+    background-color: rgb(242, 212, 217);
+    border: 5px solid rgb(154, 60, 198);
+    border-radius: 20px;
+    margin: 10px;
+    padding: 15px;
+}
+.search {
+    margin: 20px 0;
+}
+
+#filters {
+    background-color: rgb(250, 245, 179);
+}
+#results {
+    background-color: white;
+}
+#result * {
+    font-family: Courier, monospace;
+}
