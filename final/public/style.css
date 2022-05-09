@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    font-family: "Lemon", sans-serif;
+}
+
+body {
+    background-color: rgb(179, 213, 244);
+    padding: 5px;
+}
+h1 {
+    color: blueviolet;
+    font-size: 2.5vw;
+}
+.section{
+    background-color: rgb(253, 239, 241);
+    border: 4px solid rgb(123, 83, 141);
+    border-radius: 12px;
+    margin: 10px;
+    padding: 15px;
+}
+button {
+    background-color: rgb(181, 83, 174);
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    padding: 6px;
+}
+li {
+    margin-bottom: 5px;
+}
+#results {
+    background-color: white;
+}
+#unicorn-data * {
+    font-family: Courier, monospace;
+}
+
+div#left {
+    width: 30%;
+    float: left;
+  }
+
+  div#right {
+    width: 65%;
+    float: left;
+    background-color: rgb(255, 255, 219);
+  }
+  #unicorn-data {
+      font-weight: bolder;
+  }
